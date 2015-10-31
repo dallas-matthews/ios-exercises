@@ -53,7 +53,7 @@
     
     NSInteger remainder = [self.calculator remainderOfNumber:dividend dividedByNumber:divisor];
     
-    XCTAssertEqual(remainder, 0, @"15 is evenly divisible by 5, so the remainder should be 0.");
+    XCTAssertEqual(remainder, 3, @"15 is evenly divisible by 5, so the remainder should be 0.");
     
     NSInteger divisor2 = 4;
     NSInteger remainder2 = [self.calculator remainderOfNumber:dividend dividedByNumber:divisor2];
