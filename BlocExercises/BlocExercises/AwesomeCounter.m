@@ -12,7 +12,21 @@
 
 - (NSString *) stringWithNumbersBetweenNumber:(NSInteger)number andOtherNumber: (NSInteger)otherNumber {
     /* WORK HERE */
-    return @"";
+    
+    NSInteger factorialInput = -8;
+    
+    NSInteger n = 1;
+    NSInteger nFactorial = factorialInput;
+    
+    while (nFactorial <= 12) {
+        nFactorial = factorialInput + n;
+        NSString *number = [NSString stringWithFormat:@"%ld", nFactorial];
+        return number;
+        
+        n++;
+        
+    }return false;
 }
-
 @end
+
+
