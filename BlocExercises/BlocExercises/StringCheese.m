@@ -12,35 +12,36 @@
 
 - (NSString *) favoriteCheeseStringWithCheese:(NSString *)cheeseName {
     /* WORK HERE */
-    return nil;
+    NSString *newCheese = [NSString stringWithFormat:@"My favorite cheese is %@.", cheeseName];
+    
+    return newCheese;
 }
 
 - (NSString *) cheeseNameWithoutCheeseSuffix:(NSString *)cheeseName {
+    
+    NSString *newCheeseName = cheeseName;
     if ([[cheeseName lowercaseString] hasSuffix:@" cheese"]) {
-        /* WORK HERE, ASSUMING `cheeseName` ENDS WITH " cheese" */
-    } else {
-        /* WORK HERE, ASSUMING `cheeseName` DOES NOT END WITH " cheese" */
+        
+        NSRange cheeseRange = [cheeseName rangeOfString:@" cheese" options:NSCaseInsensitiveSearch];
+        newCheeseName = [cheeseName stringByReplacingCharactersInRange:cheeseRange withString:@""];
     }
-
-    /*
-     (You will learn more about if/else statements in a later checkpoint.)
-     */
-
-    return nil;
+    
+    return newCheeseName;
 }
 
 - (NSString *) numberOfCheesesStringWithCheeseCount:(NSUInteger)cheeseCount {
+    NSMutableString *mutCheese;
     if (cheeseCount == 1) {
-        /* WORK HERE, ASSUMING THERE IS 1 CHEESE */
+        mutCheese = [NSMutableString stringWithFormat:@"%lu", (unsigned long)cheeseCount];
+        [mutCheese appendString:@" cheese"];
+        
     } else {
         /* WORK HERE, ASSUMING THERE ARE 2+ CHEESES */
+        
+        mutCheese = [NSMutableString stringWithFormat:@"%lu", (unsigned long)cheeseCount];
+        [mutCheese appendString:@" cheeses"];
     }
-    
-    /*
-     (You will learn more about if/else statements in a later checkpoint.)
-     */
-    
-    return nil;
+    return mutCheese;
 }
 
 @end

@@ -12,21 +12,23 @@
 
 - (NSString *) stringWithNumbersBetweenNumber:(NSInteger)number andOtherNumber: (NSInteger)otherNumber {
     /* WORK HERE */
+   
+    NSInteger lowNumber = number;
+    NSInteger highNumber = otherNumber;
+    NSMutableString *returnString = [[NSMutableString alloc] init];
     
-    NSInteger factorialInput = -8;
-    
-    NSInteger n = 1;
-    NSInteger nFactorial = factorialInput;
-    
-    while (nFactorial <= 12) {
-        nFactorial = factorialInput + n;
-        NSString *number = [NSString stringWithFormat:@"%ld", nFactorial];
-        return number;
+    if (number > otherNumber) {
+        lowNumber = otherNumber;
+        highNumber = number;
+    }
+    for (NSInteger i = lowNumber; i <= highNumber; i++) {
+        // use appendFormat to add the string representation of i to the string
         
-        n++;
-        
-    }return false;
+        [returnString appendFormat:@"%ld", (long)i];
+    }
+    return returnString;
+    
+    
 }
 @end
-
 
